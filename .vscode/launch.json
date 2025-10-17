@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "arrayKeSekian",
+            "request": "launch",
+            "mainClass": "arrayKeSekian",
+            "projectName": "Learn JAVA - JOPHP_5e77aaf7"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "scannerinput",
+            "request": "launch",
+            "mainClass": "scannerinput",
+            "projectName": "Learn JAVA - JOPHP_5e77aaf7"
+        },
+        {
+            "type": "java",
+            "name": "variable",
+            "request": "launch",
+            "mainClass": "variable",
+            "projectName": "Learn JAVA - JOPHP_5e77aaf7"
+        }
+    ]
+}

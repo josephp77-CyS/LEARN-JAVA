@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class hckrnkloop {
+    public static void main(String[] args) {
+        Scanner in = new Scanner (System.in);
+        int N = in.nextInt();
+
+        for (int i = N; i <=10; i++ ){
+            int result = N * i;
+            System.out.println(N + " x " + i + " = " + result);
+            
+        }
+
+        in.close();
+    }
+}

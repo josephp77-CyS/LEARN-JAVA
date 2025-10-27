@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "METHOD_DINAMIS",
+            "request": "launch",
+            "mainClass": "METHOD_DINAMIS",
+            "projectName": "Learn JAVA - JOPHP_5e77aaf7"
+        },
+        {
+            "type": "java",
+            "name": "factorial",
+            "request": "launch",
+            "mainClass": "factorial",
+            "projectName": "Learn JAVA - JOPHP_5e77aaf7"
+        },
+        {
+            "type": "java",
+            "name": "Count_Char_in_String",
+            "request": "launch",
+            "mainClass": "Count_Char_in_String",
+            "projectName": "Learn JAVA - JOPHP_5e77aaf7"
+        },
+        {
+            "type": "java",
+            "name": "Dekomposisi_OperasiMatriks",
+            "request": "launch",
+            "mainClass": "Dekomposisi_OperasiMatriks",
+            "projectName": "Learn JAVA - JOPHP_5e77aaf7"
+        },
+        {
+            "type": "java",
             "name": "arrayKeSekian",
             "request": "launch",
             "mainClass": "arrayKeSekian",

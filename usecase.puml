@@ -1,0 +1,86 @@
+@startuml
+' --- Konfigurasi Awal ---
+left to right direction
+skinparam packageStyle rectangle
+
+' --- Aktor ---
+actor Customer
+actor Merchant
+
+' --- Batasan Sistem ---
+rectangle "Sistem E-Commerce" {
+
+  ' --- Use Case Umum (Dapat diakses Keduanya) ---
+  package "Manajemen Produk (Umum)" {
+    usecase "Melihat Daftar Produk" as UC_ViewList
+    usecase "Melihat Detail Produk" as UC_ViewDetails
+    usecase "Mencari Produk" as UC_Search
+    usecase "Mengurutkan Produk" as UC_Sort
+  }
+
+  package "Manajemen Akun" {
+    usecase "Login" as UC_Login
+    usecase "Logout" as UC_Logout
+    usecase "Mengakses Profil" as UC_Profile
+  }
+  
+  usecase "Mengakses 'About Us'" as UC_About
+
+  ' --- Use Case Spesifik Customer ---
+  package "Fitur Customer" {
+    usecase "Registrasi" as UC_Register
+    usecase "Mengelola Keranjang" as UC_ManageCart
+    usecase "Melakukan Pembayaran" as UC_Checkout
+    usecase "Memeriksa Status Pesanan" as UC_CheckOrder
+    usecase "Menghubungi Toko" as UC_Contact
+  }
+
+  ' --- Use Case Spesifik Merchant ---
+  package "Fitur Merchant" {
+    usecase "Mengelola Produk \n(Tambah/Hapus)" as UC_ManageProducts
+    usecase "Mengubah Harga Produk" as UC_ChangePrice
+  }
+}
+
+' --- Hubungan Aktor dengan Use Case ---
+
+' Customer
+Customer --> UC_Register
+Customer --> UC_Login
+Customer --> UC_Logout
+Customer --> UC_Profile
+Customer --> UC_ManageCart
+Customer --> UC_Checkout
+Customer --> UC_CheckOrder
+Customer --> UC_Contact
+Customer --> UC_ViewList
+Customer --> UC_Search
+Customer --> UC_About
+
+' Merchant
+Merchant --> UC_Login
+Merchant --> UC_Logout
+Merchant --> UC_Profile
+Merchant --> UC_ManageProducts
+Merchant --> UC_ChangePrice
+Merchant --> UC_ViewList
+Merchant --> UC_Search
+Merchant --> UC_About
+
+' --- Hubungan Antar Use Case (Include & Extend) ---
+
+' Use case yang memerlukan login
+(UC_Profile) .> (UC_Login) : <<include>>
+(UC_Logout) .> (UC_Login) : <<include>>
+(UC_ManageCart) .> (UC_Login) : <<include>>
+(UC_CheckOrder) .> (UC_Login) : <<include>>
+(UC_ManageProducts) .> (UC_Login) : <<include>>
+(UC_ChangePrice) .> (UC_Login) : <<include>>
+
+' Ekstensi fungsional
+(UC_ViewDetails) ..> (UC_ViewList) : <<extend>>
+(UC_ViewDetails) ..> (UC_Search) : <<extend>>
+(UC_Sort) ..> (UC_ViewList) : <<extend>>
+(UC_Checkout) ..> (UC_ManageCart) : <<extend>>
+
+@enduml

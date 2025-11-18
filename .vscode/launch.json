@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StringWrapper",
+            "request": "launch",
+            "mainClass": "out.usecase.StringWrapper",
+            "projectName": "LEARN-JAVA_46b997f1"
+        },
+        {
+            "type": "java",
             "name": "METHOD_DINAMIS",
             "request": "launch",
             "mainClass": "METHOD_DINAMIS",
